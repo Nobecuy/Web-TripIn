@@ -1,5 +1,10 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+body {
+  overflow-x: hidden; /* Pastikan body juga tidak overflow horizontal */
 }
 
 footer a {
@@ -127,14 +132,15 @@ footer a {
 .box {
   display: flex;
   justify-content: center;
-  gap: 80px; /* Atur angka ini sesukamu (misal 80px atau 5rem) */
+  gap: 20px; /* Kurangi gap untuk mencegah overflow horizontal */
   flex-wrap: wrap; /* Supaya tetap responsif */
 }
 
 .cardA {
   display: flex;
   background-color: #ffff;
-  width: 250px;
+  width: 100%; /* Ubah ke 100% agar responsif */
+  max-width: 250px; /* Maksimal 250px pada layar besar */
   height: auto;
   border-radius: 15px;
   position: relative;
@@ -241,7 +247,9 @@ footer a {
   background: #f0f0f0;
   padding: 10px;
   border-radius: 50px; /* Membuat bentuk kapsul */
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Tombol Kategori */
